@@ -1,0 +1,2 @@
+Данные после обработки модуля сжатия: 7A1F2D8C1A8E
+Восстановленные данные: AAAAAAAFDDCCCCCCCCAEEEEEEEE
