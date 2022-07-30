@@ -1,7 +1,7 @@
 # Создайте программу для игры в ""Крестики-нолики"".
 
 
-path = '/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/3_board_file.txt'
+path = '3_board_file.txt'
 board_file = open(path,'r')
 board = board_file.read()
 
@@ -11,7 +11,7 @@ board_file.close()
 board = list(range(1,10))
 
 def draw_board(board):
-   with open('/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/3_redak_board.txt', 'w', encoding='utf8') as file:
+   with open('3_redak_board.txt', 'w', encoding='utf8') as file:
       print("-" * 13, file=file)
       for i in range(3):
          print("|", board[0+i*3], "|", board[1+i*3], "|", board[2+i*3], "|", file=file)
@@ -21,14 +21,14 @@ def take_input(player_token):
    valid = False
    while not valid:
       player_answer = input("Куда поставим " + player_token+"? ")
-      with open ('/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/3_redak_board.txt', 'a+', encoding='utf8') as file:
+      with open ('3_redak_board.txt', 'a+', encoding='utf8') as file:
          file.write("Куда поставим " + player_token + '? ')
 
 
       try:
          player_answer = int(player_answer)
       except:
-         with open ('/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/3_redak_board.txt', 'a+', encoding='utf8') as file:
+         with open ('3_redak_board.txt', 'a+', encoding='utf8') as file:
             print("\nНекорректный ввод. Вы уверены, что ввели число?", file=file)
 
          continue
@@ -37,10 +37,10 @@ def take_input(player_token):
             board[player_answer-1] = player_token
             valid = True
          else:
-            with open ('/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/3_redak_board.txt', 'a+', encoding='utf8') as file:
+            with open ('3_redak_board.txt', 'a+', encoding='utf8') as file:
                print("\nЭта клетка уже занята!", file=file)
       else:
-         with open ('/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/3_redak_board.txt', 'a+', encoding='utf8') as file:
+         with open ('3_redak_board.txt', 'a+', encoding='utf8') as file:
                print("\nНекорректный ввод. Введите число от 1 до 9.", file=file)
 
 def check_win(board):
@@ -72,7 +72,7 @@ def main(board):
     draw_board(board)
 
 main(board)
-with open ('/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/3_redak_board.txt', 'a+', encoding='utf8') as file:
+with open ('3_redak_board.txt', 'a+', encoding='utf8') as file:
    print("\nИгра окончена, нажмите enter", file=file)
 input("Нажмите Enter для выхода!")
 
