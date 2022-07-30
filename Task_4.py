@@ -21,7 +21,7 @@ def rle_encode(data):
         encoding += str(count) + prev_char
         return encoding
 
-path_RLE = '/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/4_start_RLE'
+path_RLE = '4_start_RLE.txt'
 RLE_file = open(path_RLE,'r')
 res_RLE = RLE_file.read()
 print('Первоначальные данные: ' + res_RLE)
@@ -43,7 +43,7 @@ def rle_decode(data):
             count = ''
     return decode    
 
-path_RLE = '/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/4.1_start_RLE.txt'
+path_RLE = '4.1_start_RLE.txt'
 RLE_file = open(path_RLE,'r')
 res_RLE1 = RLE_file.read()
 print('Первоначальные данные: ' + res_RLE1)
@@ -52,8 +52,8 @@ RLE_file.close()
 decoded_val = rle_decode(res_RLE1)
 print('Восстановленные данные: ' + decoded_val)
 
-with open ('/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/4_end_RLE', 'w', encoding='utf8') as file:
-         file.write('Данные после обработки модуля сжатия: ' + encoded_val)
+with open ('4_end_RLE.txt', 'w', encoding='utf8') as file:
+         file.write(encoded_val)
 
-with open ('/Users/inferno163/Documents/Учеба/ДЗ/2 semestr/Python/Seminar(python)_5.py/4_end_RLE', 'a+', encoding='utf8') as file:
+with open ('4_end_RLE.txt', 'a+', encoding='utf8') as file:
          file.write('\n'+ 'Восстановленные данные: ' + decoded_val)
